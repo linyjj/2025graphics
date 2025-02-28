@@ -1,19 +1,20 @@
-//week02-3
-void setup(){
+// week02_3_void_setup_void_draw_line
+void setup(){ // 一開始，設定1次(貼上剛剛 week02_2 的程式)
+  // week02_2_for_for_if_rect
   size(400,400);
   background(255);
   fill(238);
   noStroke();
-  float s=400/14;
-  for(int i=0;i<14;i++){
-    for(int j=1;j<14;j++){
-    //rect(0,i*s*2,s,s);
-    //rect(j*s*2,0,s,s);
-    if((i+j)%2==0) rect(j*s,i*s,s,s);
-    }
+  float s = 400/14; // 每個格子的大小
+  for(int i=0; i<14; i++){ // 左手 i 對應 y 座標
+    for(int j=0; j<14; j++){ // 右手 j 對應 x 座標
+      // rect(0,i*s*2,s,s); // 先試一下位置
+      if((i+j)%2==0) rect(j*s,i*s,s,s);
+    } // 下面才是真的程式碼，完成畫格子的任務
   }
 }
-void draw(){//每秒畫60次
-  stroke(255,0,0);//紅色的線
+
+void draw(){ // 每秒畫60次
+  stroke(255,0,0); // 紅色的線
   if(mousePressed) line(mouseX,mouseY,pmouseX,pmouseY);
-}//如果按mouse就畫線,給兩個座標:現在mouse和之前的mouse
+} // 如果 mouse 按下去，就畫線，給兩個座標點:現在的mouse 和 之前的 mouse
